@@ -24,3 +24,9 @@ let editContact (phoneNumber: string) (newName: string) (newEmail: string) =
         MessageBox.Show($"Contact updated successfully!") |> ignore
     else
         MessageBox.Show("Contact not found!") |> ignore
+        
+let deleteContact (phoneNumber: string) =
+    if contacts.Remove(phoneNumber) then
+        MessageBox.Show($"Contact deleted successfully!") |> ignore
+    else
+        MessageBox.Show("Contact not found!") |> ignore
