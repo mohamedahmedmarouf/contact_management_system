@@ -27,13 +27,14 @@ do
             MessageBox.Show($"Contact '{name}' added successfully!") |> ignore
         else
             MessageBox.Show("Contact already exists!") |> ignore
+            let editContact (phoneNumber: string) (newName: string) (newEmail: string) =
+    if contacts.ContainsKey(phoneNumber) then
+        contacts.[phoneNumber] <- { Name = newName; PhoneNumber = phoneNumber; Email = newEmail }
+        MessageBox.Show($"Contact updated successfully!") |> ignore
+    else
+        MessageBox.Show("Contact not found!") |> ignore
 
-    let editContact (phoneNumber: string) (newName: string) (newEmail: string) =
-        if contacts.ContainsKey(phoneNumber) then
-            contacts.[phoneNumber] <- { Name = newName; PhoneNumber = phoneNumber; Email = newEmail }
-            MessageBox.Show($"Contact updated successfully!") |> ignore
-        else
-            MessageBox.Show("Contact not found!") |> ignore
+
 
     let deleteContact (phoneNumber: string) =
         if contacts.Remove(phoneNumber) then
