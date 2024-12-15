@@ -16,6 +16,7 @@ let addContact (name: string) (phoneNumber: string) (email: string) =
         MessageBox.Show($"Contact '{name}' added successfully!") |> ignore
     else
         MessageBox.Show("Contact already exists!") |> ignore
+        //update
 
 let editContact (phoneNumber: string) (newName: string) (newEmail: string) =
     if contacts.ContainsKey(phoneNumber) then
