@@ -32,4 +32,9 @@ let deleteContact (phoneNumber: string) =
     else
         MessageBox.Show("Contact not found!") |> ignore
 
-        
+let searchContact (phoneNumber: string) =
+    if contacts.ContainsKey(phoneNumber) then
+        let contact = contacts.[phoneNumber]
+        MessageBox.Show($"Name: {contact.Name}\nPhone: {contact.PhoneNumber}\nEmail: {contact.Email}") |> ignore
+    else
+        MessageBox.Show("Contact not found!") |> ignore
