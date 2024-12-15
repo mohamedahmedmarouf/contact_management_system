@@ -1,7 +1,8 @@
+//defination data type
 open System
 open System.Windows.Forms
 open System.Collections.Generic
-
+//defination contact type
 type Contact = {
     Name: string
     PhoneNumber: string
@@ -30,3 +31,5 @@ let deleteContact (phoneNumber: string) =
         MessageBox.Show($"Contact deleted successfully!") |> ignore
     else
         MessageBox.Show("Contact not found!") |> ignore
+
+        
