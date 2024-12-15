@@ -1,0 +1,11 @@
+open System
+open System.Windows.Forms
+open System.Collections.Generic
+
+type Contact = {
+    Name: string
+    PhoneNumber: string
+    Email: string
+}
+
+let contacts = new Dictionary<string, Contact>()
